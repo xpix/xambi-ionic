@@ -48,7 +48,8 @@ angular.module('starter.controllers', ['starter.services','chart.js'])
 
 
   // last 6 houres
-  var json = Sensor.jsonpquery({subparams: '/sensors/' + sensor.sensor + ',avg,1h,-22000'}, function(results){
+  // http://78.43.187.187:3080/topic/rollup/avg/1h?path=/sensors/411&start=-30000&prepare=true
+  var json = Sensor.jsonpquery({start: -22000,  path: '/sensors/' + sensor.sensor}, function(results){
      for(idx in results){
          item = results[idx];
          if(!item.Time)
