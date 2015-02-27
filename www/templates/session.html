@@ -1,0 +1,11 @@
+<ion-view title="Sensors in {{group}}">
+    <ion-content class="has-header">
+      <ion-list>
+          <ion-item ng-repeat="sensor in sensors" href="#/app/sensor/{{sensor.sensor}}" class="item item-avatar">
+             <img ng-src="/images/{{sensor.info.config.Image}}">
+             <h2>{{sensor.type}}</h2>
+             <p>{{sensor.power}}mV | {{sensor.value[1].last/sensor.value[1].display.divider}} {{sensor.value[1].display.suffix}}</p>
+          </ion-item>
+      </ion-list>
+    </ion-content>
+</ion-view>

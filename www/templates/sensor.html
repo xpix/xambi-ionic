@@ -1,0 +1,33 @@
+<ion-view title="Sensor {{sensor.name}}">
+    <ion-content class="has-header">
+      <div class="list card">
+      
+        <div class="item item-avatar">
+          <img ng-src="/images/{{sensor.info.config.Image}}">
+
+          <div ng-repeat="svalue in sensor.value">
+            <div class="cell">
+               <b>{{svalue.name}}</b>
+               <br/>
+               {{svalue.last / svalue.display.divider}}{{svalue.display.suffix}}
+            </div>
+          </div>
+        </div>
+      
+        <div class="item item-body" ng-controller="LineCtrl">
+         <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
+        </div>
+      
+        <div class="item tabs tabs-secondary tabs-icon-left">
+         <div class="button-bar">
+           <a class="button">Refresh</a>
+           <a class="button">Save</a>
+           <a class="button">Remove</a>
+         </div>
+   
+        </div>
+      
+      </div>
+
+    </ion-content>
+</ion-view>
