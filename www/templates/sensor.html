@@ -7,26 +7,16 @@
 
           <div ng-repeat="svalue in sensor.value">
             <div class="cell">
-               <b>{{svalue.name}}</b>
-               <br/>
-               {{svalue.last / svalue.display.divider}}{{svalue.display.suffix}}
+               <h3>{{svalue.name}}</h3>
+               <h4>{{svalue.last / svalue.display.divider}}{{svalue.display.suffix}}</h4>
             </div>
           </div>
         </div>
       
         <div class="item item-body" ng-controller="LineCtrl">
-         <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick"></canvas>
+         <canvas id="line" class="chart chart-line" data="data" labels="labels" legend="true" series="series" click="onClick" width="95%" height="55%"></canvas>
         </div>
-      
-        <div class="item tabs tabs-secondary tabs-icon-left">
-         <div class="button-bar">
-           <a class="button">Refresh</a>
-           <a class="button">Save</a>
-           <a class="button">Remove</a>
-         </div>
-   
-        </div>
-      
+        <h6>{{sensor.text}}</h6>      
       </div>
 
     </ion-content>
